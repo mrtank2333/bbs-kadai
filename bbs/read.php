@@ -42,12 +42,6 @@ $rows = $select_sth->fetchAll();
   <!-- 投稿用フォームここまで -->
   <hr>
 
-  <!--
-    投稿の表示
-    foreachを用いたループで表現しています。
-    利用者が任意の内容を投稿する部分(名前と本文)は htmlspecialchars() を用いエスケープします。
-      XSS対策です。
-  -->
   <?php foreach ($rows as $row) : ?>
   <div style="margin: 2em;">
     <span><?= htmlspecialchars($row['name']) ?>さんの投稿</span>
