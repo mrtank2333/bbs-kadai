@@ -39,10 +39,8 @@ if (!password_verify($_POST['password'], $row['password'])) {
 
 //パスワードがあっている，つまりログイン成功です。
 //ログイン状態をCookieに保存します。
-//この方法はセキュリティ上難が有ります。後期で対策方法について説明します。前期の課題はこれで構いません。
 setcookie('login_id', $row['login_id'], 0, '/');
 // /bbsでも使いたいcookieなので，パスを指定しています。
-// setcookie() の引数は沢山あります。公式ドキュメントを読むとよいでしょう。 https://www.php.net/manual/ja/function.setcookie.php
 
 // ログイン完了したら会員登録完了画面に飛ばす
 header("HTTP/1.1 302 Found");
