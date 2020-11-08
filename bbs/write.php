@@ -1,12 +1,11 @@
 <?php
-// 必須項目の名前と本文のどちらでも欠けていたら何も処理せず閲覧画面に戻す (リダイレクト)
 if (empty($_POST['body'])) {
   header("HTTP/1.1 302 Found");
   header("Location: ./read.php");
   return;
 }
 
-// ログインしていなければ閲覧画面に戻す(リダイレクト)
+// ログインしていなければ閲覧画面に戻す
 if (empty($_COOKIE["login_id"])) {
   header("HTTP/1.1 302 Found");
   header("Location: ./read.php");
